@@ -18,3 +18,14 @@ echo "======================================================" >> "$REPORT_FILE"
 echo "Generated : $(date)" >> "$REPORT_FILE"
 echo "Hostname  : $(hostname)" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
+
+# ----------------------------------------------------------
+# Detailed Session Information
+# ----------------------------------------------------------
+
+echo "2. ACTIVE USER SESSIONS" >> "$REPORT_FILE"
+echo "------------------------------------------------------" >> "$REPORT_FILE"
+
+w >> "$REPORT_FILE"
+
+echo "" >> "$REPORT_FILE"
