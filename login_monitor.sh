@@ -29,3 +29,18 @@ echo "------------------------------------------------------" >> "$REPORT_FILE"
 w >> "$REPORT_FILE"
 
 echo "" >> "$REPORT_FILE"
+
+# ----------------------------------------------------------
+# Failed Login Attempts
+# ----------------------------------------------------------
+
+echo "4. FAILED LOGIN ATTEMPTS" >> "$REPORT_FILE"
+echo "------------------------------------------------------" >> "$REPORT_FILE"
+
+if [ -f /var/log/btmp ]; then
+    sudo lastb | head -20 >> "$REPORT_FILE"
+else
+    echo "Failed login log not found." >> "$REPORT_FILE"
+fi
+
+echo "" >> "$REPORT_FILE"
