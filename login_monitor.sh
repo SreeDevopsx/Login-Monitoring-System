@@ -44,3 +44,20 @@ else
 fi
 
 echo "" >> "$REPORT_FILE"
+
+# ----------------------------------------------------------
+# SSH Login Records
+# ----------------------------------------------------------
+
+echo "6. SSH LOGIN HISTORY" >> "$REPORT_FILE"
+echo "------------------------------------------------------" >> "$REPORT_FILE"
+
+if [ -f /var/log/auth.log ]; then
+    grep "Accepted" /var/log/auth.log | tail -20 >> "$REPORT_FILE"
+elif [ -f /var/log/secure ]; then
+    grep "Accepted" /var/log/secure | tail -20 >> "$REPORT_FILE"
+else
+    echo "SSH logs not found." >> "$REPORT_FILE"
+fi
+
+echo "" >> "$REPORT_FILE"
