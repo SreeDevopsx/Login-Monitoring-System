@@ -31,6 +31,18 @@ w >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
 
 # ----------------------------------------------------------
+# Last Login Records
+# ----------------------------------------------------------
+
+echo "3. LAST 20 LOGIN RECORDS" >> "$REPORT_FILE"
+echo "------------------------------------------------------" >> "$REPORT_FILE"
+
+last -n 20 >> "$REPORT_FILE"
+
+echo "" >> "$REPORT_FILE"
+
+
+# ----------------------------------------------------------
 # Failed Login Attempts
 # ----------------------------------------------------------
 
@@ -42,6 +54,17 @@ if [ -f /var/log/btmp ]; then
 else
     echo "Failed login log not found." >> "$REPORT_FILE"
 fi
+
+echo "" >> "$REPORT_FILE"
+
+# ----------------------------------------------------------
+# Root Logins
+# ----------------------------------------------------------
+
+echo "5. ROOT LOGIN DETECTION" >> "$REPORT_FILE"
+echo "------------------------------------------------------" >> "$REPORT_FILE"
+
+last root | head -10 >> "$REPORT_FILE"
 
 echo "" >> "$REPORT_FILE"
 
