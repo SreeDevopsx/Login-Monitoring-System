@@ -44,3 +44,14 @@ else
 fi
 
 echo "" >> "$REPORT_FILE"
+
+# ----------------------------------------------------------
+# Root Logins
+# ----------------------------------------------------------
+
+echo "5. ROOT LOGIN DETECTION" >> "$REPORT_FILE"
+echo "------------------------------------------------------" >> "$REPORT_FILE"
+
+last root | head -10 >> "$REPORT_FILE"
+
+echo "" >> "$REPORT_FILE"
