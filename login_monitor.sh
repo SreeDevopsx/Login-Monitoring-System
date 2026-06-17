@@ -20,6 +20,17 @@ echo "Hostname  : $(hostname)" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
 
 # ----------------------------------------------------------
+# Current Logged In Users
+# ----------------------------------------------------------
+
+echo "1. CURRENT LOGGED-IN USERS" >> "$REPORT_FILE"
+echo "------------------------------------------------------" >> "$REPORT_FILE"
+
+who >> "$REPORT_FILE"
+
+echo "" >> "$REPORT_FILE"
+
+# ----------------------------------------------------------
 # Detailed Session Information
 # ----------------------------------------------------------
 
