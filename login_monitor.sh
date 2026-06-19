@@ -107,3 +107,9 @@ else
 echo "Failed SSH logs not found." >> "$REPORT_FILE" 
 fi
 echo "" >> "$REPORT_FILE"
+
+# ---------------------------------------------------------- Login Count ----------------------------------------------------------
+echo "8. CURRENT LOGIN COUNT" >> "$REPORT_FILE" 
+echo "------------------------------------------------------" >> "$REPORT_FILE" 
+who | wc -l >>  "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
