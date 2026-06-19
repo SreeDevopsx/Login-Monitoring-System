@@ -95,3 +95,15 @@ else
 fi
 
 echo "" >> "$REPORT_FILE"
+
+# ---------------------------------------------------------- Failed SSH Attempts ----------------------------------------------------------
+echo "7. FAILED SSH ATTEMPTS" >> "$REPORT_FILE" 
+echo "------------------------------------------------------" >> "$REPORT_FILE" 
+if [ -f /var/log/auth.log ]; then
+    grep "Failed password" /var/log/auth.log | tail -20 >> "$REPORT_FILE" 
+elif [ -f /var/log/secure ]; then 
+    grep "Failed password" /var/log/secure | tail -20 >> "$REPORT_FILE"
+else 
+echo "Failed SSH logs not found." >> "$REPORT_FILE" 
+fi
+echo "" >> "$REPORT_FILE"
