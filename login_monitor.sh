@@ -124,3 +124,16 @@ who | wc -l >> "$REPORT_FILE"
 
 echo "" >> "$REPORT_FILE"
 
+
+# ----------------------------------------------------------
+# Summary
+# ----------------------------------------------------------
+
+echo "======================================================" >> "$REPORT_FILE"
+echo "Login Monitoring Completed Successfully"
+echo "======================================================" >> "$REPORT_FILE"
+
+echo ""
+echo "Report Generated Successfully"
+echo "Location: $REPORT_FILE"
+echo ""
